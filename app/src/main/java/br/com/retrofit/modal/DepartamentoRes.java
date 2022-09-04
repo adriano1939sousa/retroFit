@@ -32,4 +32,10 @@ public class DepartamentoRes {
     public void setProfessors(List<Professores> professors) {
         this.professors = professors;
     }
+
+    @Override
+    public String toString() {
+        return  "ID=" + id +
+                ", Name='" + name  ;
+    }
 }

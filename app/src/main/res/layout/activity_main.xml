@@ -21,7 +21,7 @@
         android:id="@+id/edDepId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:inputType="number|textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/button"
@@ -31,21 +31,42 @@
 
     <EditText
         android:id="@+id/edIdDep"
-        android:layout_width="87dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="380dp"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="208dp"
         android:ems="10"
         android:inputType="number|textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/edNameUp"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edNameUp"
+        android:layout_width="202dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="208dp"
+        android:ems="10"
+        android:inputType="text|textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:text="Update"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edNameDep"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="136dp"
         android:ems="10"
         android:inputType="text|textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/button"
@@ -53,16 +74,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-            android:id="@+id/edNameUp"
-        android:layout_width="210dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="376dp"
-        android:ems="10"
-        android:inputType="text|textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+    <Button
+        android:id="@+id/btCadDep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:text="CAD"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -77,26 +95,20 @@
         android:id="@+id/btfind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="4dp"
         android:text="Find"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btCadDep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:text="CAD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-16dp">
 
-    <Button
-        android:id="@+id/btUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="376dp"
-        android:text="Update"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </ListView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
