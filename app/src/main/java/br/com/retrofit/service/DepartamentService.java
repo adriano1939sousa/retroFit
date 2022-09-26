@@ -31,4 +31,6 @@ public interface DepartamentService {
 
     @PUT("departments/{department_id}")
     Call<DepartamentoRes> updateDepartament(@Path("department_id")  Long id, @Body Departament departament);
+
+    Call<List<Departament>> getAllDepartaments();
 }

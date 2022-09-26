@@ -1,6 +1,7 @@
 package br.com.retrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import br.com.retrofit.modal.DepartamentoRes;
 import br.com.retrofit.modal.Professores;
 import br.com.retrofit.service.DepartamentService;
 
+import br.com.retrofit.service.DepartmentAdapater;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,6 +39,11 @@ public class MainActivity extends AppCompatActivity{
     private EditText edIdDep;
     private EditText edNameUp;
     private Button btUpdate;
+
+    private RecyclerView rvList;
+    private DepartmentAdapater adapter;
+    private DepartamentService departmentService;
+
 
     private List<DepartamentoRes> depResList = new ArrayList<>();
 
@@ -65,10 +72,6 @@ public class MainActivity extends AppCompatActivity{
                     .newInstance()
                     .departamentService();
 
-            getAllDepartment(service);
-            ListView listaDep = (ListView) findViewById(R.id.lista);
-            ArrayAdapter<DepartamentoRes> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, depResList);
-            listaDep.setAdapter(adapter);
 
             findButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -209,4 +212,29 @@ public class MainActivity extends AppCompatActivity{
                     }
             );
         }
+
+    private void getAllDepartments(){
+        departmentService.getAllDepartmant().enqueue(
+                new Callback<List<DepartamentoRes>>() {
+                    @Override
+                    public void onResponse(Call<List<DepartamentoRes>> call, Response<List<DepartamentoRes>> response) {
+                        List<DepartamentoRes> lista = response.body();
+                        adapter.configureDepartmentAdapter(lista);
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<DepartamentoRes>> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(), "Erro na requisição!", Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+    }
+
+    private void init(){
+        rvList = findViewById(R.id.rvDepartmentList);
+        departmentService = RetrofitConfig.newInstance().departamentService();
+        adapter = new DepartmentAdapater(new ArrayList<>());
+    }
+
 }

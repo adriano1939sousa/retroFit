@@ -1,7 +1,8 @@
 package br.com.retrofit.modal;
 
 
-public class Professor {
+
+public class Curso {
 
     private int id;
 

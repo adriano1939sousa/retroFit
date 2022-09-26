@@ -1,11 +1,10 @@
 package br.com.retrofit.modal;
 
-
-public class Professor {
+public class Allocation {
 
     private int id;
 
-    private String name;
+    private String dayOfWeek;
 
     public int getId() {
         return id;
@@ -16,11 +15,10 @@ public class Professor {
     }
 
     public String getName() {
-        return name;
+        return dayOfWeek;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
-
 }

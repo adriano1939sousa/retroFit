@@ -101,14 +101,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/lista"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDepartmentList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="-16dp">
-
-    </ListView>
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/department_item_layout"
+        tools:itemCount="10"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
